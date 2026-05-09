@@ -2,7 +2,7 @@
 
 
 from security import log_event, save_game
-
+from inventory import add_item,show_inventory
 
 
 
@@ -22,10 +22,13 @@ def impersonate_route():
     if choice == "1":
         print("\n You sneak into the bathroom and search the guards bags for their uniforms and security badges.")
         print("\n After searching multiple bags your able to find one bag that has an old slightly ripped security uniform and another bag with a locked phone ")
+        add_item("Security Uniform")
+        add_item("Locked Phone")
         print("\n You hear footsteps approaching")
     elif choice == "2":
         print("\n You sneak into the security guard room in hopes to find any possible badges, keys, or uniforms.")
         print("\n You search through the security room and find a security badge and see the CCTV someone is on the way.")
+        add_item("Security Badge")
     else:
         print("\n Invalid choice. Please choose 1 or 2.")
 
@@ -68,11 +71,12 @@ def impersonate_route():
 
 
 
-
+        show_inventory()
         print("\nENDING: You are caught before reaching the exit.")
 
     else:
         print("\nInvalid choice.")
+        
 
 
 
@@ -124,6 +128,7 @@ def blackout_route():
     if choice == "1":
         print("\nYou keep searching for any type of exit or just anywhere to leave where you are now.")
         print("successfully you finaly found something. a broken door nearby that seems like it wasn't used in awhile.")
+        add_item("Flashlight")
 
     elif choice == "2":
         print("\nYou hide nearby and wait patiently.")
@@ -160,14 +165,17 @@ def blackout_route():
 
         if choice == "1":
             print("\nThe guard asks for your ID but you dont have one.")
+            show_inventory()
             print("\nENDING: The guard realizes your lying and detains you.")
 
         elif choice == "2":
             print("\nYou begin stuttering and panicking while trying to explain yourself.")
             print("The guard loses any bit of trust.")
+            show_inventory()
             print("\nENDING: You are detained by security.")
         else:
             print("\nInvalid choice.")
+            show_inventory()
 
 
 
@@ -216,7 +224,7 @@ def hacking_route():
     elif choice == "2":
         print("\nYou search through the facility system files and try to specifically search for your name.")
         print("You somehow manage to find a set of files that are specific to you.")
-
+        add_item("Personal Files")
     else:
         print("\nInvalid choice. Please choose 1 or 2.")
         
@@ -262,10 +270,11 @@ def hacking_route():
         if choice == "1":
             print("\nThe guard asks for your credentials.")
             print("You can't provide any.")
+            show_inventory()
             print("\nENDING: Security is alerted and you are detained.")
         elif choice == "2":
             print("\nThe guard instantly calls for backup after hearing your explanation.")
-
+            show_inventory()
             print("\nENDING: You are detained before escaping.")
 
         else:
@@ -273,7 +282,7 @@ def hacking_route():
 
     else:
         print("\nInvalid choice.")
-
+        show_inventory()
 
 
 
