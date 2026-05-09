@@ -20,4 +20,4 @@ Flee the Facility is text based python game where the player wakes up inside of 
 # Multiple different files for different parts 
 
 
-# Faisal Anwari CYSE 101 Project
+# Faisal Anwari CYSE 130 Project
